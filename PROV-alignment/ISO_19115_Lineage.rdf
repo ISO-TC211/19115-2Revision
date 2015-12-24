@@ -1,0 +1,640 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY prov "http://www.w3.org/ns/prov#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY ISO_19115_Lineage "http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#">
+]>
+<rdf:RDF xmlns="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#" xml:base="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl" xmlns:ISO_19115_Lineage="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:prov="http://www.w3.org/ns/prov#"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<owl:Ontology rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl">
+		<dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yanfeng Shu</dc:creator>
+		<dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kerry Taylor</dc:creator>
+		<dc:identifier>http://purl.oclc.org/NET/ssnx/ssn</dc:identifier>
+		<dc:title>ISO 19115 Lineage Ontology</dc:title>
+		<dct:created>2013-01-30</dct:created>
+		<dc:rights>Copyright 2013 CSIRO</dc:rights>
+		<cc:license rdf:resource="http://creativecommons.org/licenses/by/2.0"/>	
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology is designed to link ISO 19115 lineage concepts to PROV-O concepts</rdfs:comment>
+		<owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
+	</owl:Ontology>
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	<owl:AnnotationProperty rdf:about="&prov;definition"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+	<owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+	<owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasAlgorithm -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasAlgorithm">
+		<rdfs:label rdf:datatype="&xsd;string">algorithm</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">details of the methodology by which geographic information was derived from the instrument readings</prov:definition>
+		<rdfs:subPropertyOf rdf:resource="&prov;entity"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasOutput -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasOutput">
+		<rdfs:label rdf:datatype="&xsd;string">output</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">description of the product generated as a result of the process step</prov:definition>
+		<rdfs:subPropertyOf rdf:resource="&prov;wasGeneratedBy"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasProcessingInformation -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasProcessingInformation">
+		<rdfs:label rdf:datatype="&xsd;string">processingInformation</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">comprehensive information about the procedure by which the algorithm was applied to derive geographic data from the raw instrument measurements, such as datasets, software used and the processing environment</prov:definition>
+		<rdfs:subPropertyOf rdf:resource="&prov;qualifiedUsage"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasReport -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasReport">
+		<rdfs:label rdf:datatype="&xsd;string">report</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">report generated by the process step</prov:definition>
+		<rdfs:subPropertyOf rdf:resource="&prov;wasGeneratedBy"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#source -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#source">
+		<rdfs:label rdf:datatype="&xsd;string">source</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about the source data used in creating the data specified by the scope </prov:definition>
+		<owl:inverseOf rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceStep"/>
+		<rdfs:subPropertyOf rdf:resource="&prov;used"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceStep -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceStep">
+		<rdfs:label rdf:datatype="&xsd;string">sourceStep</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition>information about an event in the creation process for the source data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#citation -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#citation">
+		<rdfs:label rdf:datatype="&xsd;string">citation</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information identifying the algorithm and version or date</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#documentation -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#documentation">
+		<rdfs:label rdf:datatype="&xsd;string">documentation</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">reference to documentation describing the processing</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#identifier -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#identifier">
+		<rdfs:label rdf:datatype="&xsd;string">identifier</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information to identify the processing package that produced the data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#lineageSource -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#lineageSource">
+		<rdfs:label rdf:datatype="&xsd;string">source</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about the source data used in creating the data specified by the scope</prov:definition>
+		<rdfs:comment rdf:datatype="&xsd;string">it&apos;s &apos;source&apos; in ISO 19115:2005. To differentiate from &apos;source&apos; role in LI_ProcessStep, &apos;lineageSource&apos; is named here (with label &apos;source&apos;)</rdfs:comment>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processStep -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processStep">
+		<rdfs:label rdf:datatype="&xsd;string">processStep</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about events in the life of a dataset specified by the scope</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processedLevel -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processedLevel">
+		<rdfs:label rdf:datatype="&xsd;string">processedLevel</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">processing level of the source data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processor -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processor">
+		<rdfs:label rdf:datatype="&xsd;string">processor</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">identification of, and means of communication with, person(s) and organization(s) associated with the process step</prov:definition>
+		<rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#resolution -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#resolution">
+		<rdfs:label rdf:datatype="&xsd;string">resolution</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">distance between consistent parts (centre, left side, right side) of two adjacent pixels</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#scaleDenominator -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#scaleDenominator">
+		<rdfs:label rdf:datatype="&xsd;string">scaleDenominator</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">denominator of the representative fraction on a source map</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#softwareReference -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#softwareReference">
+		<rdfs:label rdf:datatype="&xsd;string">softwareReference</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">reference to document describing processing software</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceCitation -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceCitation">
+		<rdfs:label rdf:datatype="&xsd;string">sourceCitation</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">recommended reference to be used for the source data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceExtent -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceExtent">
+		<rdfs:label rdf:datatype="&xsd;string">sourceExtent</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about the spatial, vertical and temporal extent of the source data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceReferenceSystem -->
+	<owl:ObjectProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceReferenceSystem">
+		<rdfs:label rdf:datatype="&xsd;string">sourceReferenceSystem</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about an event in the creation process for the source data</prov:definition>
+	</owl:ObjectProperty>
+	<!-- http://www.w3.org/ns/prov#entity -->
+	<owl:ObjectProperty rdf:about="&prov;entity"/>
+	<!-- http://www.w3.org/ns/prov#qualifiedUsage -->
+	<owl:ObjectProperty rdf:about="&prov;qualifiedUsage"/>
+	<!-- http://www.w3.org/ns/prov#used -->
+	<owl:ObjectProperty rdf:about="&prov;used"/>
+	<!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+	<owl:ObjectProperty rdf:about="&prov;wasAssociatedWith"/>
+	<!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+	<owl:ObjectProperty rdf:about="&prov;wasGeneratedBy"/>
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#dateTime -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#dateTime"/>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#fileType -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#fileType"/>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#name -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#name"/>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#procedureDescription -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#procedureDescription">
+		<rdfs:label rdf:datatype="&xsd;string">procedureDescription</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">addtional details about the processing procedures</prov:definition>
+	</owl:DatatypeProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#rationale -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#rationale">
+		<rdfs:label rdf:datatype="&xsd;string">rationale</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">requirement or purpose for the process step</prov:definition>
+	</owl:DatatypeProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#runTimeParameters -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#runTimeParameters">
+		<rdfs:label rdf:datatype="&xsd;string">runTimeParameters</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">paramenters to control the processing operations, entered at run time</prov:definition>
+	</owl:DatatypeProperty>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#statement -->
+	<owl:DatatypeProperty rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#statement">
+		<rdfs:label rdf:datatype="&xsd;string">statement</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">general explanation of the data producer&apos;s knowledge about the lineage of a dataset</prov:definition>
+	</owl:DatatypeProperty>
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Algorithm -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Algorithm">
+		<rdfs:label rdf:datatype="&xsd;string">LE_Algorithm</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&prov;Plan"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#citation"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#citation"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+				<owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">details of the methodology by which geographic information was derived from the instrument readings</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_NominalResolution -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_NominalResolution">
+		<rdfs:label rdf:datatype="&xsd;string">LE_NominalResolution</rdfs:label>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">details of the methodology by which geographic information was derived from the instrument readings</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_ProcessStep -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_ProcessStep">
+		<rdfs:label rdf:datatype="&xsd;string">LE_ProcessStep</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_ProcessStep"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasReport"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_ProcessStepReport"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasProcessingInformation"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Processing"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasOutput"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Source"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasProcessingInformation"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Processing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about an event or transfromation in the life of the dataset including details of the algorithm and software used for processing (LI_ProcessStep extended)</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_ProcessStepReport -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_ProcessStepReport">
+		<rdfs:label rdf:datatype="&xsd;string">LE_ProcessStepReport</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&prov;Entity"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#name"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#fileType"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#fileType"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#name"/>
+				<owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">report of what occured during the process step</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Processing -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Processing">
+		<rdfs:label rdf:datatype="&xsd;string">LE_Processing</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&prov;Usage"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#documentation"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#runTimeParameters"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#procedureDescription"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#identifier"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier"/>
+				<owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#softwareReference"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#hasAlgorithm"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Algorithm"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#identifier"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#procedureDescription"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#runTimeParameters"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">comprehensive information about the procedure(s), process(es) and algorithm(s) applied in the process step</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Source -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_Source">
+		<rdfs:label rdf:datatype="&xsd;string">LE_Source</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Source"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#resolution"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_NominalResolution"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processedLevel"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#resolution"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LE_NominalResolution"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processedLevel"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115.2:2011</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information on data sets input to or output by the processing step (LI_Source extended)</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_ProcessStep -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_ProcessStep">
+		<rdfs:label rdf:datatype="&xsd;string">LI_ProcessStep</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&prov;Activity"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#source"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Source"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#rationale"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#dateTime"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processor"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_ResponsibleParty"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#rationale"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#dateTime"/>
+				<owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about an event or transformation in the life of a dataset including the process used to maintain the dataset</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Source -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Source">
+		<rdfs:label rdf:datatype="&xsd;string">LI_Source</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&prov;Entity"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#scaleDenominator"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_RepresentativeFraction"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceStep"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_ProcessStep"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceExtent"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#EX_Extent"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#description"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceReferenceSystem"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_ReferenceSystem"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceCitation"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#scaleDenominator"/>
+				<owl:onClass rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_RepresentativeFraction"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceReferenceSystem"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_ReferenceSystem"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#sourceCitation"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="&xsd;string">&apos;description&apos; is mandatory if &apos;sourceExtent&apos; is not documented; &apos;sourceExtent&apos; is mandatory if &apos;description&apos; is not documented</rdfs:comment>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about the source data used in creating the data specified by the scope</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_Citation">
+		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_ResponsibleParty -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#CI_ResponsibleParty">
+		<rdfs:subClassOf rdf:resource="&prov;Agent"/>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#EX_Extent -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#EX_Extent">
+		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Lineage -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Lineage">
+		<rdfs:label rdf:datatype="&xsd;string">LI_Lineage</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#lineageSource"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_Source"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#processStep"/>
+				<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#LI_ProcessStep"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#statement"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#statement"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="&xsd;string">&apos;source&apos; role is mandatory if LI_Lineage.statement and &apos;processStep&apos; role are not documented; &apos;processStep&apos; role is mandatory if LI_Lineage.statement and &apos;source&apos; role are not documented</rdfs:comment>
+		<rdfs:seeAlso rdf:datatype="&xsd;string">ISO 19115:2005</rdfs:seeAlso>
+		<prov:definition rdf:datatype="&xsd;string">information about the events or source data used in constructing the data specified by the scope or lack of knowledge about lineage</prov:definition>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_Identifier">
+		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_ReferenceSystem -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_ReferenceSystem">
+		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+	</owl:Class>
+	<!-- http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_RepresentativeFraction -->
+	<owl:Class rdf:about="http://www.w3.org/2001/sw/wiki/PROV/ISO_19115_Lineage.owl#MD_RepresentativeFraction">
+		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
+	</owl:Class>
+	<!-- http://www.w3.org/ns/prov#Activity -->
+	<owl:Class rdf:about="&prov;Activity"/>
+	<!-- http://www.w3.org/ns/prov#Agent -->
+	<owl:Class rdf:about="&prov;Agent"/>
+	<!-- http://www.w3.org/ns/prov#Entity -->
+	<owl:Class rdf:about="&prov;Entity"/>
+	<!-- http://www.w3.org/ns/prov#Plan -->
+	<owl:Class rdf:about="&prov;Plan"/>
+	<!-- http://www.w3.org/ns/prov#Usage -->
+	<owl:Class rdf:about="&prov;Usage"/>
+</rdf:RDF>
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
